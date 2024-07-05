@@ -1,0 +1,37 @@
+<div class="bg-secondary min-h-screen max-w-6xl mx-auto py-10 w-full">
+    <div *ngIf="job">
+      <h2 class="text-3xl py-4">{{job.title}} at {{job.company}}</h2>
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" [formGroup]="jobForm" (ngSubmit)="onJobSubmit()">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+            Full Name: 
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" formControlName="name">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Email: 
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" formControlName="email">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+            Message
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" formControlName="message">
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Send
+          </button>
+          <a class="inline-block align-baseline border p-2 rounded font-bold text-sm text-blue-500 hover:text-blue-800 cursor-pointer" [routerLink]="['/job-details', job.id]">
+            Cancel
+          </a>
+        </div>
+      </form>
+    </div>
+    <p class="text-center text-gray-500 text-xs">
+      &copy; Ambroze. All rights reserved.
+    </p>
+  </div>
+  

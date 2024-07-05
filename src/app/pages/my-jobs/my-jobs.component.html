@@ -1,0 +1,17 @@
+<div class="bg-secondary">
+    <div class=" min-h-screen max-w-7xl mx-auto flex gap-4 justify-center pt-10"
+      *ngIf="jobs"
+    >
+      <app-job
+      *ngFor="let job of jobs"
+      [job]="job"
+      [editButton] ="true"
+      [deleteButton] ="true"
+      >
+      </app-job>
+    </div>
+    
+    <div *ngIf="!jobs"> 
+      <p>Loading...</p>
+    </div>
+    </div>
